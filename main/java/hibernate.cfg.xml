@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+       "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+       "http://www.jboss.org/dtd/hibernate/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+ <session-factory>
+
+<!-- API´s del driver JDBC-->
+  <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+  <!-- URL de la base de datos, junto parámetros correspondientes -->
+  <property name="connection.url">
+     jdbc:mysql://localhost:3306/mascotas
+  </property>
+  <!-- Usuario y contraseña de la base de datos -->
+  <property name="connection.username">root</property>
+  <property name="connection.password"></property>
+
+  <!-- Carga de transacciones, relacionado con el rendimiento de la BB.DD. -->
+  <property name="connection.pool_size">100</property>
+
+  <!-- Versión de la BB.DD. En este ejemplo,versión 5 de MySQL-->
+  <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+  <!-- Gestión automática de las sesiones de Hibernate a través de hilos-->
+  <property name="current_session_context_class">thread</property>
+
+  <!-- Caché de los datos ya extraidos de la BB.DD. -->
+  <property name="cache.provider_class">
+      org.hibernate.cache.NoCacheProvider
+  </property>
+
+  <!-- Muestra sentencias SQL por la consola -->
+  <property name="show_sql">true</property>
+
+  <!-- Relacionado con el arranque.
+       También podría ser create-drop(borra antes el catálogo) -->
+  <property name="hbm2ddl.auto">update</property>
+
+   <!--<mapping class="model..." />-->
+
+	<mapping class="model.Institucione" />
+  	<mapping class="model.Mascota" />
+  	<mapping class="model.Reserva" />
+  	<mapping class="model.Usuario" />
+
+ </session-factory>
+
+</hibernate-configuration>
+

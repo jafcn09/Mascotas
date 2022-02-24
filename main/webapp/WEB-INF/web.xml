@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/java2e" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>MascotaController</servlet-name>
+  	<display-name>MascotaController</display-name>
+  	<description></description>
+  	<servlet-class>controller.MascotaController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UsuarioController</servlet-name>
+  	<display-name>UsuarioController</display-name>
+  	<description></description>
+  	<servlet-class>controller.UsuarioController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>InstitucionesController</servlet-name>
+  	<display-name>InstitucionesController</display-name>
+  	<description></description>
+  	<servlet-class>controller.InstitucionesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>UsuarioController</servlet-name>
+  	<url-pattern>/views/usuario</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MascotaController</servlet-name>
+  	<url-pattern>/views/mascota</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>InstitucionesController</servlet-name>
+  	<url-pattern>/views/institucion</url-pattern>
+  </servlet-mapping>
+</web-app>
